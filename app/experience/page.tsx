@@ -3,6 +3,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+
 interface ExperienceItem {
   title: string;
   company: string;
@@ -13,23 +14,47 @@ interface ExperienceItem {
 
 const softwareExperiences: ExperienceItem[] = [
   {
-    title: "Software Developer",
-    company: "Your Current Company",
-    period: "2020 - Present",
+    title: "Computer Programmer III",
+    company: "Polytechnic University of the Philippines",
+    period: "2023 - Present",
     description: [
-      "Developed and maintained full-stack web applications using modern technologies",
-      "Collaborated with cross-functional teams to deliver high-quality software solutions",
-      "Implemented responsive and accessible user interfaces",
+      "Led the development of the Student Information System (SIS) and Academic Management Information System (AMIS)",
+      "Designed and implemented RESTful APIs using .NET Core 9 for system integration",
+      "Developed full-stack solutions with modern web technologies and best practices",
+      "Collaborated with stakeholders to gather requirements and deliver high-quality software solutions",
     ],
-    skills: ["React", "Next.js", "TypeScript", "Node.js", "SQL"],
+    skills: [".NET Core 9", "C#", "RESTful APIs", "SQL Server", "JavaScript", "HTML5", "CSS3", "Bootstrap", "AdminLTE"],
+  },
+  {
+    title: "Software Developer",
+    company: "CloudManila Philippines Inc.",
+    period: "Mar 2021 - Apr 2023",
+    description: [
+      "Creating web application using Angular and .NET CORE",
+      "Maintaining web application in Vue JS",
+      "Creating web application using ASP. NET CORE MVC",
+    ],
+    skills: ["Angular", "Vue.js", "ASP.NET Core MVC", ".NET Core", "JavaScript", "TypeScript", "C#"],
+  },
+  {
+    title: "Software Developer",
+    company: "TRUE BPO INC.",
+    period: "Jun 2019 - Feb 2021",
+    description: [
+      "Develop coding systems and validation application",
+      "Developed software for checking file",
+      "Creating web application using ASP. NET CORE MVC",
+      "Other desktop and web application for specific purposes",
+    ],
+    skills: ["ASP.NET Core MVC", ".NET Core", "C#", "Desktop Applications", "Web Development"],
   },
 ];
 
 const teachingExperiences: ExperienceItem[] = [
   {
     title: "Professor",
-    company: "Private School Name",
-    period: "2018 - Present",
+    company: "College of Saint Amatiel",
+    period: "2024 - Present",
     description: [
       "Teaching computer science and programming fundamentals to undergraduate students",
       "Developed comprehensive curriculum and learning materials",

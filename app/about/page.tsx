@@ -20,11 +20,11 @@ export default function AboutPage() {
         <div className="mt-10">
           <h2 className="text-2xl font-bold mb-6">Technical Skills</h2>
           <ul className="list-disc pl-6 mb-4 space-y-2">
-            <li>Frontend: React, Next.js, TypeScript, Tailwind CSS</li>
-            <li>Backend: Node.js, Python, Java</li>
-            <li>Databases: PostgreSQL, MongoDB</li>
-            <li>Cloud: AWS, Google Cloud Platform</li>
-            <li>Tools: Git, Docker, CI/CD</li>
+            <li>Frontend: React, Next.js, TypeScript, Tailwind CSS, shadcn/ui</li>
+            <li>Backend: C#, .NET, Node.js, Java</li>
+            <li>Databases: Microsoft SQL, MySQL, SQLite</li>
+            <li>Cloud: Azure</li>
+            <li>Tools: Git, CI/CD</li>
           </ul>
         </div>
 

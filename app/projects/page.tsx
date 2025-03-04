@@ -1,55 +1,66 @@
 "use client";
 
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-interface Project {
-  name: string;
+interface ProjectItem {
+  title: string;
   description: string;
   technologies: string[];
-  link?: string;
+  role: string;
 }
 
-const projects: Project[] = [
+const projects: ProjectItem[] = [
   {
-    name: "Portfolio Website",
-    description: "A modern portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features a responsive design and dark mode support.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-    link: "https://github.com/yourusername/portfolio",
+    title: "Student Information System (SIS)",
+    description: "A comprehensive system for managing student data, academic records, and administrative processes at the Polytechnic University of the Philippines. Features include student enrollment, grade management, and academic tracking.",
+    technologies: [".NET Core 9", "C#", "SQL Server", "JavaScript", "HTML5", "CSS3", "Bootstrap", "AdminLTE"],
+    role: "Lead Developer"
   },
   {
-    name: "Project Management App",
-    description: "A full-stack project management application with real-time updates and team collaboration features.",
-    technologies: ["React", "Node.js", "PostgreSQL", "WebSocket"],
-    link: "https://github.com/yourusername/project-management",
+    title: "Academic Management Information System (AMIS)",
+    description: "An integrated platform for managing academic operations, faculty information, and curriculum planning. The system streamlines administrative tasks and enhances communication between faculty and administration.",
+    technologies: [".NET Core 9", "C#", "SQL Server", "JavaScript", "HTML5", "CSS3", "Bootstrap", "AdminLTE"],
+    role: "Lead Developer"
   },
+  {
+    title: "Personal Portfolio Website",
+    description: "A modern, responsive portfolio website built with Next.js and TypeScript, showcasing my professional experience, projects, and skills. Features a clean design with dark mode support and responsive layouts.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Shadcn UI"],
+    role: "Developer"
+  },
+  {
+    title: "Image Redaction System",
+    description: "A specialized tool for automated image processing and redaction, ensuring privacy and security in document management.",
+    technologies: ["C#", ".NET Core", "Image Processing Libraries"],
+    role: "Developer"
+  }
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: ProjectItem }) {
   return (
-    <div className="group relative rounded-lg border p-6 hover:shadow-lg transition-shadow">
-      <h2 className="text-2xl font-bold">{project.name}</h2>
-      <p className="text-muted-foreground mt-2">
-        {project.description}
-      </p>
-      <div className="mt-4 flex gap-2 flex-wrap">
-        {project.technologies.map((tech) => (
-          <Badge key={tech} variant="secondary">
-            {tech}
-          </Badge>
-        ))}
-      </div>
-      {project.link && (
-        <a 
-          href={project.link}
-          className="absolute inset-0"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`View ${project.name} project details`}
-        >
-          <span className="sr-only">View project details</span>
-        </a>
-      )}
-    </div>
+    <Card className="mb-6">
+      <CardHeader>
+        <div className="flex justify-between items-start">
+          <div>
+            <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
+            <CardDescription className="text-lg text-muted-foreground mt-1">
+              {project.role}
+            </CardDescription>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="mb-4 text-muted-foreground">
+          {project.description}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {project.technologies.map((tech) => (
+            <Badge key={tech} variant="secondary">{tech}</Badge>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -59,11 +70,12 @@ export default function ProjectsPage() {
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Projects</h1>
         <p className="text-xl text-muted-foreground mb-8">
-          A selection of my recent projects and work
+          Showcasing my key projects and technical achievements
         </p>
-        <div className="grid gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+
+        <div className="mt-10">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </div>

@@ -3,16 +3,22 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Icons } from "./icons"
 import { siteConfig } from "../config/site"
+import Image from "next/image"
 
 export function MainNav() {
   const pathname = usePathname()
 
   return (
     <div className="mr-4 hidden md:flex">
-      <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
-        <Icons.logo className="h-6 w-6" />
+      <Link href="/" className="mr-4 flex items-center gap-2 px-2 lg:mr-6">
+        <Image
+          src={siteConfig.ogImage}
+          alt={siteConfig.name}
+          width={24}
+          height={24}
+          className="h-6 w-6"
+        />
         <span className="hidden font-bold lg:inline-block">
           {siteConfig.name}
         </span>
