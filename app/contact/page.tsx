@@ -40,10 +40,11 @@ export default function ContactPage() {
         throw new Error("Failed to send message");
       }
     } catch (error) {
+      console.error("Failed to send email:", error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
         variant: "destructive",
+        title: "Error",
+        description: "Failed to send message. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -55,7 +56,7 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Contact</h1>
         <p className="text-xl text-muted-foreground mb-8">
-          Get in touch with me
+          Let&apos;s get in touch!
         </p>
 
         <div className="grid gap-8">
@@ -80,7 +81,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle className="text-xl font-bold">Send a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and I'll get back to you as soon as possible
+                Fill out the form below and I&apos;ll get back to you as soon as possible
               </CardDescription>
             </CardHeader>
             <CardContent>
