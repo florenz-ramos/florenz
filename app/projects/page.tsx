@@ -7,10 +7,39 @@ interface ProjectItem {
   title: string;
   description: string;
   technologies: string[];
+  url?:string;
   role: string;
 }
 
 const projects: ProjectItem[] = [
+  
+  {
+    title: "Company Website (Avision PH)",
+    description: "A comprehensive system for managing customer to check data of the company and what is the product, this website features ordering system.",
+    technologies: ["Wordpress"],
+    url: "https://www.avisionph.com/",
+    role: "Lead Developer"
+  },
+  {
+    title: "Company Website (Level Five)",
+    description: "A comprehensive system for managing customer to check data of the company and what is the product, this website features ordering system.",
+    technologies: ["Wordpress"],
+    url: "http://level5.com.ph",
+    role: "Lead Developer"
+  },
+  {
+    title: "Company Website (Lynx Industrial)",
+    description: "A comprehensive system for managing customer to check data of the company and what is the product, this website features ordering system.",
+    technologies: ["Shopify"],
+    url: "https://www.lynxindustrialcorp.com",
+    role: "Lead Developer"
+  },
+  {
+    title: "Human Resources Information System",
+    description: "A specialized tool for automated Attendance System with Payroll Management.",
+    technologies: ["C#", ".NET Core"],
+    role: "Developer"
+  },
   {
     title: "Student Information System (SIS)",
     description: "A comprehensive system for managing student data, academic records, and administrative processes at the Polytechnic University of the Philippines. Features include student enrollment, grade management, and academic tracking.",
@@ -35,6 +64,7 @@ const projects: ProjectItem[] = [
     technologies: ["C#", ".NET Core", "Image Processing Libraries"],
     role: "Developer"
   }
+  
 ];
 
 function ProjectCard({ project }: { project: ProjectItem }) {
@@ -54,7 +84,9 @@ function ProjectCard({ project }: { project: ProjectItem }) {
         <p className="mb-4 text-muted-foreground">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <a className="mb-4 text-blue-800" target="_blank" href={project.url}>{project.url}</a>
+
+        <div className="flex flex-wrap gap-2 mt-4">
           {project.technologies.map((tech) => (
             <Badge key={tech} variant="secondary">{tech}</Badge>
           ))}
